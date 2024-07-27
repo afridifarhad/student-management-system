@@ -23,13 +23,13 @@ export default function StudentTable({ students, setStudents }) {
     setEditDialogOpen(true);
   }
   async function handleSaveStudent() {
-   const studentDoc =  doc(db, 'students', currentStudent.id)
-   await updateDoc(studentDoc, {
-    name: currentStudent.name,
-    age: currentStudent.age
-   })
-   setStudents((student) => student.id === currentStudent.id ? currentStudent : student )
-   handleDialogClose()
+    const studentDoc = doc(db, "students", currentStudent.id);
+    await updateDoc(studentDoc, {
+      name: currentStudent.name,
+      age: currentStudent.age,
+    });
+    setStudents(students.map((student) => student.id === currentStudent.id ? currentStudent: student)  );
+    handleDialogClose();
   }
   // delete student
   async function handleDeleteStudent(studentId) {
@@ -44,14 +44,12 @@ export default function StudentTable({ students, setStudents }) {
   }
   // handle change in dialog values
 
-  function handleChange (event) {
-     const {name, value} = event.target
-     setCurrentStudent((prev) => ({
-        ...prev,
-        [name]: value
-
-     }))
-        
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setCurrentStudent((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   }
 
   return (

@@ -38,7 +38,7 @@ export default function UpdateStudentDialog({editDialogOpen, currentStudent, han
            type='number'
            fullWidth
            value={currentStudent?.age || ''}
-          onchange={handleChange}
+          onChange={handleChange}
            />
         </DialogContent>
         <DialogActions>

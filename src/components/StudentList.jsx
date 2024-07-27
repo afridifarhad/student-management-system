@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import StudentTable from "./StudentTable";
 
 function StudentList({ students,setStudents }) {
+ 
   return (
     <>
       <h2>Student List</h2>
