@@ -1,6 +1,6 @@
 import StudentTable from "./StudentTable";
 
-function StudentList({ students }) {
+function StudentList({ students,setStudents }) {
   return (
     <>
       <h2>Student List</h2>
@@ -15,7 +15,7 @@ function StudentList({ students }) {
             );
           })}
       </div> */}
-      <StudentTable students={students} />
+      <StudentTable students={students} setStudents={setStudents} />
     </>
   );
 }

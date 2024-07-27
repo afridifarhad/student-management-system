@@ -27,7 +27,7 @@ function App() {
     <div className="app-container">
       <h1 className="app-tittle"> Student Management System</h1>
       <CreateStudent getStudents={getStudents} />
-      <StudentList students={students} />
+      <StudentList students={students} setStudents={setStudents} />
     </div>
   );
 }
