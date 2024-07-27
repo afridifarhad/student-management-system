@@ -6,6 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 
@@ -15,10 +17,10 @@ export default function StudentTable({students}) {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Student Roll #</TableCell>
-            <TableCell align="right">Student Name</TableCell>
-            <TableCell align="right">Student Age</TableCell>
-            <TableCell align="right">Actions</TableCell>
+            <TableCell align='center'>Student Roll #</TableCell>
+            <TableCell align="center">Student Name</TableCell>
+            <TableCell align="center">Student Age</TableCell>
+            <TableCell align="center">Actions</TableCell>
            
           </TableRow>
         </TableHead>
@@ -28,13 +30,13 @@ export default function StudentTable({students}) {
               key={student.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell align='center'>
                 {student.rollNo}
               </TableCell>
-              <TableCell align="right">{student.name}</TableCell>
-              <TableCell align="right">{student.age}</TableCell>
-              <TableCell align="right">
-                Edid-icon Delete-icon
+              <TableCell align="center">{student.name}</TableCell>
+              <TableCell align="center">{student.age}</TableCell>
+              <TableCell align="center">
+                <EditIcon /> <DeleteIcon />
               </TableCell>
               
             </TableRow>
